@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.main-container {
+    max-width: 850px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.header-title {
+    color: #1a365d;
+    font-size: 24px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.header-subtitle {
+    color: #4a5568;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.nav-menu {
+    text-align: center;
+    margin: 15px 0;
+    padding: 10px;
+    background-color: #edf2f7;
+    border-radius: 8px;
+}
+
+.nav-link {
+    color: #2b6cb0;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #1a365d;
+    text-decoration: underline;
+}
+
+.section-title {
+    color: #2c5282;
+    margin: 25px 0 15px 0;
+    font-size: 18px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 5px;
+}
+
+.form-section {
+    border: 1px solid #cbd5e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+.form-legend {
+    font-weight: bold;
+    color: #2b6cb0;
+    padding: 0 10px;
+}
+
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.form-table td {
+    padding: 8px;
+    vertical-align: middle;
+}
+
+.label-text {
+    font-weight: 500;
+    color: #4a5568;
+}
+
+.input-field, .select-field, .textarea-field {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e0;
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus, .select-field:focus, .textarea-field:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2);
+}
+
+.textarea-field {
+    resize: vertical;
+}
+
+.badge-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.badge {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: #e53e3e;
+    color: white;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.button-group {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-submit {
+    background-color: #3182ce;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-right: 10px;
+}
+
+.btn-submit:hover {
+    background-color: #2b6cb0;
+}
+
+.btn-reset {
+    background-color: #e2e8f0;
+    color: #4a5568;
+    border: none;
+    padding: 12px 25px;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-reset:hover {
+    background-color: #cbd5e0;
+}
+
+.interest-list {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.interest-list li {
+    margin-bottom: 10px;
+}
+
+.grades-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.grades-table th, .grades-table td {
+    border: 1px solid #e2e8f0;
+    padding: 12px;
+    text-align: center;
+}
+
+.grades-table th {
+    background-color: #edf2f7;
+    color: #2d3748;
+}
+
+.grades-table tr:nth-child(even) {
+    background-color: #f7fafc;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 15px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 13px;
+    color: #718096;
+}
