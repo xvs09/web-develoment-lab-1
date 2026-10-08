@@ -4,25 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Миний Лабораторийн Ажлууд</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #38bdf8;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 900px;
+        }
+
+        ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+        }
+
+        li a:hover {
+            background: linear-gradient(135deg, #0284c7, #2563eb);
+            color: #ffffff;
+            border-color: #38bdf8;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.4);
+        }
+    </style>
 </head>
 <body>
-    <h1>Миний Лабораторийн Ажлууд</h1>
-    <ul>
-        <li><a href="./lab1/index.html">Лаборатори 1</a></li>
-        <li><a href="./lab2/index.html">Лаборатори 2</a></li>
-        <li><a href="./lab3/index.html">Лаборатори 3</a></li>
-        <li><a href="./lab4/index.html">Лаборатори 4</a></li>
-        <li><a href="./lab5/index.html">Лаборатори 5</a></li>
-        <li><a href="./lab6/index.html">Лаборатори 6</a></li>
-        <li><a href="./lab7/index.html">Лаборатори 7</a></li>
-        <li><a href="./lab8/index.html">Лаборатори 8</a></li>
-        <li><a href="./lab9/index.html">Лаборатори 9</a></li>
-        <li><a href="./lab10/index.html">Лаборатори 10</a></li>
-        <li><a href="./lab11/index.html">Лаборатори 11</a></li>
-        <li><a href="./lab12/index.html">Лаборатори 12</a></li>
-        <li><a href="./lab13/index.html">Лаборатори 13</a></li>
-        <li><a href="./lab14/index.html">Лаборатори 14</a></li>
-        <li><a href="./lab15/index.html">Лаборатори 15</a></li>
-    </ul>
+    <div class="container">
+        <h1>Миний Лабораторийн Ажлууд</h1>
+        <ul>
+            <li><a href="./lab1/index.html">Лаборатори 1</a></li>
+            <li><a href="./lab2/index.html">Лаборатори 2</a></li>
+            <li><a href="./lab3/index.html">Лаборатори 3</a></li>
+            <li><a href="./lab4/index.html">Лаборатори 4</a></li>
+            <li><a href="./lab5/index.html">Лаборатори 5</a></li>
+            <li><a href="./lab6/index.html">Лаборатори 6</a></li>
+            <li><a href="./lab7/index.html">Лаборатори 7</a></li>
+            <li><a href="./lab8/index.html">Лаборатори 8</a></li>
+            <li><a href="./lab9/index.html">Лаборатори 9</a></li>
+            <li><a href="./lab10/index.html">Лаборатори 10</a></li>
+            <li><a href="./lab11/index.html">Лаборатори 11</a></li>
+            <li><a href="./lab12/index.html">Лаборатори 12</a></li>
+            <li><a href="./lab13/index.html">Лаборатори 13</a></li>
+            <li><a href="./lab14/index.html">Лаборатори 14</a></li>
+            <li><a href="./lab15/index.html">Лаборатори 15</a></li>
+        </ul>
+    </div>
 </body>
 </html>
