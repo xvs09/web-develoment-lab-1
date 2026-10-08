@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаборатори 03: Ажил горилогчийн дэлгэрэнгүй анкет</title>
+    <!-- External CSS файлыг холбож байна -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- HEADER ХЭСЭГ -->
+        <header>
+            <h1 class="header-title">АЖИЛ ГОРИЛОГЧИЙН ДЭЛГЭРЭНГҮЙ АНКЕТ</h1>
+            <p class="header-subtitle">Веб хөгжүүлэгчийн сул орон тоонд бүртгүүлэх маягт | Лаборатори 02</p>
+            
+            <nav class="nav-menu">
+                <a href="#registration-section" class="nav-link">1. Дэлгэрэнгүй анкет</a> | 
+                <a href="#interests-section" class="nav-link">2. Миний сонирхол</a> | 
+                <a href="#grades-section" class="nav-link">3. Миний дүн</a>
+            </nav>
+        </header>
+
+        <!-- MAIN ХЭСЭГ -->
+        <main>
+            <!-- 1. ФОРМ / АНКЕТЫН ХЭСЭГ -->
+            <section id="registration-section">
+                <h2 class="section-title">1. Ажил горилогчийн бүртгэлийн анкет</h2>
+                
+                <form action="#" method="post" enctype="multipart/form-data">
+                    
+                    <!-- ХЭСЭГ 1: ҮНДСЭН МЭДЭЭЛЭЛ -->
+                    <fieldset class="form-section">
+                        <legend class="form-legend">1. Хувийн мэдээлэл болон Бүртгэл</legend>
+                        <table class="form-table">
+                            <tr>
+                                <td width="35%" align="right"><label for="fullname" class="label-text">Овог нэр:</label></td>
+                                <td width="65%"><input type="text" id="fullname" name="fullname" class="input-field" required minlength="3" placeholder="username"></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><label for="email" class="label-text">Имэйл хаяг:</label></td>
+                                <td><input type="email" id="email" name="email" class="input-field" required placeholder="user@gmail.com"></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><label for="phone" class="label-text">Утасны дугаар:</label></td>
+                                <td><input type="tel" id="phone" name="phone" class="input-field" required pattern="[0-9]{8}" placeholder="99999999" title="8 оронтой тоо бичнэ үү"></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><label for="password" class="label-text">Системийн нууц үг:</label></td>
+                                <td><input type="password" id="password" name="password" class="input-field" required minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Наад зах нь 8 тэмдэгт, нэг тоо, нэг том ба жижиг үсэг агуулсан байна"></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><label for="dob" class="label-text">Төрсөн огноо:</label></td>
+                                <td><input type="date" id="dob" name="dob" class="input-field" required></td>
+                            </tr>
+                            <tr>
+                                <td align="right"><label for="avatar" class="label-text">Цээж зураг (Image):</label></td>
+                                <td><input type="file" id="avatar" name="avatar" class="input-field" accept="image/*" required></td>
+                            </tr>
+                        </table>
+                    </fieldset>
+
+                    <!-- ХЭСЭГ 2: НЭМЭЛТ МЭДЭЭЛЭЛ БОЛОН АНКТЫН АСУУЛТУУД -->
+                    <fieldset class="form-section">
+                        <legend class="form-legend">2. Боловсрол, Хүйс ба Туршлага</legend>
+                        <table class="form-table">
+                            <tr>
+                                <td width="35%" align="right" valign="top"><strong class="label-text">Хүйс:</strong></td>
+                                <td width="65%">
+                                    <input type="radio" id="gender-male" name="gender" value="male" required>
+                                    <label for="gender-male">Эрэгтэй</label> &nbsp;
+                                    <input type="radio" id="gender-female" name="gender" value="female">
+                                    <label for="gender-female">Эмэгтэй</label> &nbsp;
+                                    <input type="radio" id="gender-other" name="gender" value="other">
+                                    <label for="gender-other">Бусад</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right"><label for="education" class="label-text">Боловсролын түвшин:</label></td>
+                                <td>
+                                    <select id="education" name="education" class="select-field" required>
+                                        <option value="">-- Сонгоно уу --</option>
+                                        <option value="highschool">Бүрэн дунд</option>
+                                        <option value="bachelor">Бакалавр (Одоо суралцаж буй / Төгссөн)</option>
+                                        <option value="master">Магистр</option>
+                                        <option value="doctor">Доктор</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right"><label for="job-position" class="label-text">Сонирхож буй албан тушаал:</label></td>
+                                <td>
+                                    <select id="job-position" name="job_position" class="select-field" required>
+                                        <option value="">-- Албан тушаал сонгох --</option>
+                                        <option value="frontend">Frontend Веб хөгжүүлэгч</option>
+                                        <option value="backend">Backend Хөгжүүлэгч</option>
+                                        <option value="fullstack">Fullstack Хөгжүүлэгч</option>
+                                        <option value="uiux">UI/UX Дизайнер</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top"><strong class="label-text">Эзэмшсэн ур чадвар:</strong></td>
+                                <td>
+                                    <input type="checkbox" id="skill-html" name="skills" value="html">
+                                    <label for="skill-html">HTML5 / CSS3</label><br>
+                                    <input type="checkbox" id="skill-js" name="skills" value="javascript">
+                                    <label for="skill-js">JavaScript (ES6+)</label><br>
+                                    <input type="checkbox" id="skill-git" name="skills" value="git">
+                                    <label for="skill-git">Git / GitHub / GitLab</label><br>
+                                    <input type="checkbox" id="skill-sql" name="skills" value="sql">
+                                    <label for="skill-sql">Өгөгдлийн бааз (SQL / NoSQL)</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+
+                    <!-- ХЭСЭГ 3: ДЭЛГЭРЭНГҮЙ АСУУЛТУУД (АЖЛЫН НӨХЦӨЛ) -->
+                    <fieldset class="form-section">
+                        <legend class="form-legend">3. Ажлын нөхцөл болон Өөрийн тухай</legend>
+                        <table class="form-table">
+                            <tr>
+                                <td width="35%" align="right"><label for="expected-salary" class="label-text">Хүсч буй цалин (₮):</label></td>
+                                <td width="65%">
+                                    <input type="number" id="expected-salary" name="expected_salary" class="input-field" min="500000" max="10000000" step="100000" placeholder="2500000">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right"><label for="work-type" class="label-text">Ажиллах хэлбэр:</label></td>
+                                <td>
+                                    <select id="work-type" name="work_type" class="select-field" required>
+                                        <option value="">-- Сонгоно уу --</option>
+                                        <option value="fulltime">Бүтэн цагаар (Full-time)</option>
+                                        <option value="parttime">Цагийн ажил (Part-time)</option>
+                                        <option value="remote">Зайнаас / Гэрээсээ (Remote)</option>
+                                        <option value="intern">Дадлагажигч (Internship)</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top"><label for="bio" class="label-text">Өөрийн тухай товч танилцуулга:</label></td>
+                                <td>
+                                    <div class="badge-wrapper">
+                                        <span class="badge">Шинэ</span>
+                                        <textarea id="bio" name="bio" class="textarea-field" rows="4" placeholder="Та өөрийн давуу тал, зорилго болон туршлагынхаа талаар товч бичнэ үү..."></textarea>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right" valign="top"><label for="motivation" class="label-text">Яагаад манай байгууллагыг сонгосон бэ?:</label></td>
+                                <td>
+                                    <textarea id="motivation" name="motivation" class="textarea-field" rows="3" placeholder="Ажилд орох хүсэл эрмэлзлээ бичнэ үү..."></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="checkbox" id="agree-terms" name="agree_terms" required>
+                                    <label for="agree-terms">Оруулсан мэдээлэл үнэн зөв болохыг зөвшөөрч байна.</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </fieldset>
+
+                    <!-- ИЛГЭЭХ ТОВЧ -->
+                    <div class="button-group">
+                        <input type="submit" class="btn-submit" value="Анкет илгээх">
+                        <input type="reset" class="btn-reset" value="Маягтыг цэвэрлэх">
+                    </div>
+                </form>
+            </section>
+
+            <!-- 2. ЭРЭМБЭЛЭГДЭЭГҮЙ ЖАГСААЛТ (UL) -->
+            <section id="interests-section">
+                <h2 class="section-title">2. Миний сонирхол</h2>
+                <ul class="interest-list">
+                    <li><strong>Веб програмчлал:</strong> Шинэ технологиуд судалж, бие даан веб сайт болон систем хөгжүүлэх.</li>
+                    <li><strong>Спортоор хичээллэх:</strong> Чөлөөт цагаараа сагсан бөмбөг тоглох, сүмийн ууланд алхах.</li>
+                    <li><strong>Ном унших:</strong> Технологи, хувь хүний хөгжил болон уран зохиолын ном унших.</li>
+                </ul>
+            </section>
+
+            <!-- 3. ДҮНГИЙН ХҮСНЭГТ (TABLE) -->
+            <section id="grades-section">
+                <h2 class="section-title">3. Миний дүн</h2>
+                <table class="grades-table">
+                    <caption><strong>2026 оны Хаврын улирлын судалсан хичээлийн үнэлгээ</strong></caption>
+                    <thead>
+                        <tr>
+                            <th>№</th>
+                            <th>Хичээлийн нэр</th>
+                            <th>Кредит</th>
+                            <th>Үнэлгээний дүн</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td align="left">Веб програмчлалын үндэс</td>
+                            <td>3</td>
+                            <td>A (95%)</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td align="left">Өгөгдлийн бүтэц ба алгоритм</td>
+                            <td>3</td>
+                            <td>A- (91%)</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td align="left">Өгөгдлийн баазын үндэс</td>
+                            <td>3</td>
+                            <td>B+ (88%)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+
+        <!-- FOOTER ХЭСЭГ -->
+        <footer class="footer">
+            <p>&copy; 2026 Лаборатори 03. Бүх эрх хуулиар хамгаалагдсан.</p>
+            <p>Хөгжүүлэгч: О.Хүслэн В251930046 | Мэдээллийн технологийн сургууль</p>
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаб 4 - Layout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>Вэб Сайтын Layout</h1>
+  </header>
+
+  <!-- Navigation bar (Flexbox ашигласан) -->
+  <nav class="nav-bar">
+    <a href="#">Нүүр</a>
+    <a href="#">Мэдээ</a>
+    <a href="#">Бүтээгдэхүүн</a>
+    <a href="#">Үйлчилгээ</a>
+    <a href="#">Холбоо барих</a>
+  </nav>
+
+  <!-- Үндсэн хэсэг (Main container) -->
+  <div class="main-container">
+    
+    <!-- Үндсэн агуулга (CSS Grid ашигласан 3 баганатай карт) -->
+    <main class="main-content">
+      <div class="card">
+        <h3>Карт 1</h3>
+        <p>Энэ бол 3+ баганатай grid-ийн эхний карт юм.</p>
+      </div>
+      <div class="card">
+        <h3>Карт 2</h3>
+        <p>Энэ бол CSS Grid ашиглан байршуулсан хоёр дахь карт юм.</p>
+      </div>
+      <div class="card">
+        <h3>Карт 3</h3>
+        <p>Энэ бол гурав дахь карт юм.</p>
+      </div>
+      <div class="card">
+        <h3>Карт 4</h3>
+        <p>Нэмэлт карт оруулж баганы байршлыг туршиж болно.</p>
+      </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h3>Хажуугийн цэс (Sidebar)</h3>
+      <p>Энд нэмэлт мэдээлэл болон холбоосууд байрлана.</p>
+    </aside>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Вэб зохиомж. Бүх эрх хуулиар хамгаалагдсан.</p>
+  </footer>
+
+</body>
+</html>

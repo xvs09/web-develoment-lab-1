@@ -1,0 +1,99 @@
+/* Ерөнхий тохиргоо */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+/* Header */
+.header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Navigation bar - FLEXBOX */
+.nav-bar {
+  display: flex;
+  justify-content: center; /* Элементүүдийг голуулах */
+  align-items: center;    /* Босоо чиглэлд голуулах */
+  gap: 20px;               /* Зай авна */
+  background-color: #34495e;
+  padding: 12px 0;
+}
+
+.nav-bar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.nav-bar a:hover {
+  background-color: #1abc9c;
+}
+
+/* Эх хуудасны үндсэн бүтэц (Content + Sidebar) */
+.main-container {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+/* Main content - CSS GRID (3 баганатай карт) */
+.main-content {
+  flex: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 сул багана */
+  gap: 20px;                             /* Карт хоорондын зай */
+}
+
+/* Карт бүрийн загвар */
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* Дэлгэцийн хэмжээ жижгирэх үеийн responsive тохиргоо */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .main-content {
+    grid-template-columns: 1fr; /* Жижиг дэлгэц дээр 1 багана болно */
+  }
+}
