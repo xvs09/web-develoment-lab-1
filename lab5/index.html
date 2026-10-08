@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаборатори 5 - Responsive Вэб Хуудас</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="logo">Лаб 5 Вэбсайт</div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Цэс нээх">☰</button>
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Нүүр</a>
+            <a href="#wireframe">Wireframe</a>
+            <a href="#features">Онцлог</a>
+            <a href="#contact">Холбоо барих</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Mobile-First Responsive Вэб Дизайн</h1>
+        <p>Гар утас, таблет болон компьютерийн дэлгэцэнд автоматаар тохирох вэб хуудас.</p>
+    </section>
+
+    <!-- Wireframe Section -->
+    <section class="container" id="wireframe">
+        <h2>1. Вэб Хуудасны Эх Макет (Wireframe)</h2>
+        <p class="description">Figma эсвэл цаасан дээр зурсан эх макетийн бүтцийг доор харуулав:</p>
+        
+        <div class="wireframe-grid">
+            <div class="wireframe-card">
+                <h3>📱 Mobile Wireframe</h3>
+                <p>Нэг баганатай, босоо скроллтой, хумигддаг навигаци цэстэй layout.</p>
+            </div>
+            <div class="wireframe-card">
+                <h3>💻 Desktop Wireframe</h3>
+                <p>Олон баганатай (Grid/Flexbox), дэлгэцийн өргөнийг бүрэн ашигласан layout.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container" id="features">
+        <h2>2. Responsive Контент</h2>
+        <div class="card-grid">
+            <div class="card">
+                <h3>Mobile First</h3>
+                <p>Эхлээд гар утасны хувилбарын кодийг бичиж, дараа нь дэлгэц томрох тусам өөрчилнө.</p>
+            </div>
+            <div class="card">
+                <h3>Media Queries</h3>
+                <p><code>@media (min-width: ...)</code> ашиглан дэлгэцийн хэмжээнээс хамаарч стилийг тохируулна.</p>
+            </div>
+            <div class="card">
+                <h3>No Horizontal Scroll</h3>
+                <p>Дэлгэцээс хальж хэвтээ чиглэлд скролл үүсэхгүй байхаар 100% responsive хийв.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Веб хөгжүүлэлт - Лаборатори 5 | Mobile-First UX/UI</p>
+    </footer>
+
+    <script>
+        // Гар утасны цэс нээж хаах скрипт
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
