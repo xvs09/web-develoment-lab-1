@@ -1,11 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mn">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Лаборатори 6 - Зургийн цомог портал</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <!-- Header & Theme Switcher -->
+    <header class="navbar">
+        <div class="logo">
+            <!-- Inline SVG Logo -->
+            <svg class="logo-icon" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"/>
+            </svg>
+            <span>Gallery Portal</span>
+        </div>
+        
+        <button id="themeToggle" class="btn-theme" aria-label="Сэдэв солих">
+            🌙 Dark Mode
+        </button>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Интерактив Зургийн Цомог</h1>
+            <p>CSS 3D Transform, Animations, Stagger Effect ба Dark Mode</p>
+        </section>
+
+        <!-- 1. Stagger Animation Gallery -->
+        <section class="gallery-section">
+            <h2>Stagger Эффекттэй Зургууд</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="--i: 1;">
+                    <img src="img/photo1.jpg" alt="Галерей зураг 1" onerror="this.src='https://picsum.photos/400/300?random=1'">
+                    <div class="overlay">Зураг 1</div>
+                </div>
+                <div class="gallery-item" style="--i: 2;">
+                    <img src="img/photo2.jpg" alt="Галерей зураг 2" onerror="this.src='https://picsum.photos/400/300?random=2'">
+                    <div class="overlay">Зураг 2</div>
+                </div>
+                <div class="gallery-item" style="--i: 3;">
+                    <img src="img/photo3.jpg" alt="Галерей зураг 3" onerror="this.src='https://picsum.photos/400/300?random=3'">
+                    <div class="overlay">Зураг 3</div>
+                </div>
+                <div class="gallery-item" style="--i: 4;">
+                    <img src="img/photo4.jpg" alt="Галерей зураг 4" onerror="this.src='https://picsum.photos/400/300?random=4'">
+                    <div class="overlay">Зураг 4</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 3D Flip Card Section -->
+        <section class="flip-section">
+            <h2>3D Flip Card Элемент</h2>
+            <div class="flip-card" id="flipCard">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="img/photo5.jpg" alt="Front Card" onerror="this.src='https://picsum.photos/400/300?random=5'">
+                        <div class="card-title">Урд Тал (Hover / Click хийнэ үү)</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <h3>Арын Тал</h3>
+                        <p>3D perspective, preserve-3d ба backface-visibility шинж чанаруудыг ашиглав.</p>
+                        <button id="flipBtn" class="btn-flip">Эргүүлэх</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Accessible Video & Safe iframe -->
+        <section class="media-section">
+            <h2>Медиа Контент (Video & iframe)</h2>
+            <div class="media-grid">
+                <!-- HTML5 Video with track -->
+                <div class="video-container">
+                    <h3>HTML5 Видео</h3>
+                    <video controls width="100%" poster="img/photo6.jpg">
+                        <source src="video/clip.mp4" type="video/mp4">
+                        <source src="video/clip.webm" type="video/webm">
+                        <track kind="subtitles" src="video/clip.mn.vtt" srclang="mn" label="Монгол" default>
+                        Таны хөтөч видео тоглуулахыг дэмжихгүй байна.
+                    </video>
+                </div>
+
+                <!-- Responsive & Safe Iframe -->
+                <div class="iframe-container">
+                    <h3>Аюулгүй Iframe (YouTube)</h3>
+                    <div class="responsive-iframe">
+                        <iframe 
+                            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
+                            title="YouTube video player" 
+                            loading="lazy"
+                            sandbox="allow-scripts allow-same-origin allow-presentation"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Лаборатори 6 | Advanced CSS & Media Accessibility</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
