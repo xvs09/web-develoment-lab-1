@@ -3,107 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лаборатори 6 - Зургийн цомог портал</title>
+    <title>Зургийн цомог портал - Лаборатори 6</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header & Theme Switcher -->
+    <!-- Дөрөвдүгээр даалгавар: Header & Dark Mode & Inline SVG -->
     <header class="navbar">
         <div class="logo">
-            <!-- Inline SVG Logo -->
-            <svg class="logo-icon" viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+            <!-- Тавдугаар даалгавар: Inline SVG лого -->
+            <svg class="logo-icon" viewBox="0 0 24 24" width="32" height="32" fill="currentColor" aria-hidden="true" focusable="false">
                 <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"/>
             </svg>
-            <span>Gallery Portal</span>
+            <span>Галерей Портал</span>
         </div>
         
-        <button id="themeToggle" class="btn-theme" aria-label="Сэдэв солих">
+        <button id="themeToggle" class="btn-theme" aria-label="Харанхуй ба гэрэлтэй горим солих">
             🌙 Dark Mode
         </button>
     </header>
 
     <main class="container">
+        <!-- Гуравдугаар даалгавар: Ачаалах Loader -->
+        <div id="loader" class="loader" aria-label="Ачаалж байна"></div>
+
         <section class="hero">
             <h1>Интерактив Зургийн Цомог</h1>
-            <p>CSS 3D Transform, Animations, Stagger Effect ба Dark Mode</p>
+            <p>3D Flip, Animation, Custom Properties ба Accessibility</p>
         </section>
 
-        <!-- 1. Stagger Animation Gallery -->
+        <!-- Нэгдүгээр & Гуравдугаар даалгавар: Hover/Focus Effect & Stagger Animation -->
         <section class="gallery-section">
-            <h2>Stagger Эффекттэй Зургууд</h2>
+            <h2>1. Hover & Focus Gallery (Stagger Effect)</h2>
             <div class="gallery-grid">
-                <div class="gallery-item" style="--i: 1;">
-                    <img src="img/photo1.jpg" alt="Галерей зураг 1" onerror="this.src='https://picsum.photos/400/300?random=1'">
-                    <div class="overlay">Зураг 1</div>
+                <div class="gallery-card" tabindex="0" style="--i: 1;">
+                    <img src="https://picsum.photos/400/300?random=1" alt="Байгалийн үзэсгэлэнт зураг 1" width="400" height="300">
+                    <div class="card-caption">Зураг 1 - Байгаль</div>
                 </div>
-                <div class="gallery-item" style="--i: 2;">
-                    <img src="img/photo2.jpg" alt="Галерей зураг 2" onerror="this.src='https://picsum.photos/400/300?random=2'">
-                    <div class="overlay">Зураг 2</div>
+                <div class="gallery-card" tabindex="0" style="--i: 2;">
+                    <img src="https://picsum.photos/400/300?random=2" alt="Уулсын сүрлэг зураг 2" width="400" height="300">
+                    <div class="card-caption">Зураг 2 - Уулс</div>
                 </div>
-                <div class="gallery-item" style="--i: 3;">
-                    <img src="img/photo3.jpg" alt="Галерей зураг 3" onerror="this.src='https://picsum.photos/400/300?random=3'">
-                    <div class="overlay">Зураг 3</div>
-                </div>
-                <div class="gallery-item" style="--i: 4;">
-                    <img src="img/photo4.jpg" alt="Галерей зураг 4" onerror="this.src='https://picsum.photos/400/300?random=4'">
-                    <div class="overlay">Зураг 4</div>
+                <div class="gallery-card" tabindex="0" style="--i: 3;">
+                    <img src="https://picsum.photos/400/300?random=3" alt="Хотын шөнийн зураг 3" width="400" height="300">
+                    <div class="card-caption">Зураг 3 - Хот</div>
                 </div>
             </div>
         </section>
 
-        <!-- 2. 3D Flip Card Section -->
+        <!-- Хоёрдугаар даалгавар: 3D Flip Card -->
         <section class="flip-section">
-            <h2>3D Flip Card Элемент</h2>
-            <div class="flip-card" id="flipCard">
+            <h2>2. 3D Flip Card (Арын талд мэдээлэл)</h2>
+            <div class="flip-card" tabindex="0" aria-label="Зургийн мэдээлэл бүхий 3D эргэдэг карт">
                 <div class="flip-card-inner">
                     <div class="flip-card-front">
-                        <img src="img/photo5.jpg" alt="Front Card" onerror="this.src='https://picsum.photos/400/300?random=5'">
-                        <div class="card-title">Урд Тал (Hover / Click хийнэ үү)</div>
+                        <img src="https://picsum.photos/400/300?random=4" alt="Аялалын зураг" width="400" height="300">
+                        <div class="front-title">Урд Тал (Дээгүүр нь хулганаа аваачна уу)</div>
                     </div>
                     <div class="flip-card-back">
-                        <h3>Арын Тал</h3>
-                        <p>3D perspective, preserve-3d ба backface-visibility шинж чанаруудыг ашиглав.</p>
-                        <button id="flipBtn" class="btn-flip">Эргүүлэх</button>
+                        <h3>Дэлгэрэнгүй Мэдээлэл</h3>
+                        <p><strong>Нэр:</strong> Хөвсгөл аялал</p>
+                        <p><strong>Огноо:</strong> 2026-07-15</p>
+                        <p><strong>Газар:</strong> Хөвсгөл нуур, Монгол</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Accessible Video & Safe iframe -->
+        <!-- Тавдугаар даалгавар: Видео (<track>-тэй) & Iframe -->
         <section class="media-section">
-            <h2>Медиа Контент (Video & iframe)</h2>
+            <h2>3. Медиа Контент (Видео & Зам)</h2>
             <div class="media-grid">
-                <!-- HTML5 Video with track -->
-                <div class="video-container">
+                
+                <!-- Богино видео ба captions -->
+                <div class="media-card">
                     <h3>HTML5 Видео</h3>
-                    <video controls width="100%" poster="img/photo6.jpg">
+                    <video controls width="100%" poster="https://picsum.photos/400/225?random=5">
                         <source src="video/clip.mp4" type="video/mp4">
-                        <source src="video/clip.webm" type="video/webm">
-                        <track kind="subtitles" src="video/clip.mn.vtt" srclang="mn" label="Монгол" default>
+                        <!-- Онлайн ажиллах нөөц видео (Хэрэв таны видео ажиллахгүй байвал): -->
+                        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                        <track kind="captions" src="video/clip.mn.vtt" srclang="mn" label="Монгол" default>
                         Таны хөтөч видео тоглуулахыг дэмжихгүй байна.
                     </video>
                 </div>
 
-                <!-- Responsive & Safe Iframe -->
-                <div class="iframe-container">
-                    <h3>Аюулгүй Iframe (YouTube)</h3>
-                    <div class="responsive-iframe">
+                <!-- Google Maps эсвэл YouTube Iframe -->
+                <div class="media-card">
+                    <h3>Байршлын Газрын Зураг (Iframe)</h3>
+                    <div class="iframe-wrapper">
                         <iframe 
-                            src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ" 
-                            title="YouTube video player" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10697.887201944583!2d106.917222!3d47.918611!2m2!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5d96924b1a45749f%3A0x28490f383e5a40a8!2sUlaanbaatar!5e0!3m2!1sen!2smn!4v1600000000000!5m2!1sen!2smn" 
+                            title="Улаанбаатар хотын газрын зураг"
+                            width="100%" 
+                            height="225" 
+                            style="border:0;" 
+                            allowfullscreen="" 
                             loading="lazy"
-                            sandbox="allow-scripts allow-same-origin allow-presentation"
-                            allowfullscreen>
+                            referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Лаборатори 6 | Advanced CSS & Media Accessibility</p>
+        <p>&copy; 2026 Зургийн цомог портал | Лаборатори 6</p>
     </footer>
 
     <script src="script.js"></script>

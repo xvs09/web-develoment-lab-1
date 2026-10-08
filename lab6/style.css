@@ -1,5 +1,5 @@
 /* ==========================================
-   1. DESIGN TOKENS & CUSTOM PROPERTIES
+   ДӨРӨВДҮГЭЭР ДААЛГАВАР: Custom Properties (Design Tokens)
    ========================================== */
 :root {
     --bg-color: #f8fafc;
@@ -8,11 +8,12 @@
     --primary-color: #0284c7;
     --accent-color: #38bdf8;
     --border-color: #e2e8f0;
-    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --card-radius: 12px;
     --transition-speed: 0.3s;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-/* Dark Theme Design Tokens */
+/* Dark Mode Tokens */
 [data-theme="dark"] {
     --bg-color: #0f172a;
     --card-bg: #1e293b;
@@ -20,15 +21,14 @@
     --primary-color: #38bdf8;
     --accent-color: #0284c7;
     --border-color: #334155;
-    --shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.5);
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
 }
 
-/* General Styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
 body {
@@ -44,7 +44,7 @@ body {
     padding: 20px;
 }
 
-/* Navbar & Theme Button */
+/* Header & Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -59,7 +59,6 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.2rem;
     font-weight: bold;
     color: var(--primary-color);
 }
@@ -75,73 +74,71 @@ body {
     transition: transform var(--transition-speed);
 }
 
-.btn-theme:hover {
+.btn-theme:hover, .btn-theme:focus {
     transform: scale(1.05);
+}
+
+/* ГУРАВДУГААР ДААЛГАВАР: Loader & Stagger Animation */
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--border-color);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    margin: 20px auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .hero {
     text-align: center;
-    margin: 30px 0;
+    margin: 20px 0 40px 0;
 }
 
-section {
-    margin-bottom: 40px;
-}
-
-h2 {
-    margin-bottom: 20px;
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 8px;
-}
-
-/* ==========================================
-   2. GALLERY & STAGGER ANIMATION (--i)
-   ========================================== */
+/* НЭГДҮГЭЭР ДААЛГАВАР: Hover/Focus-within & Scale Effect */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
-.gallery-item {
+.gallery-card {
     position: relative;
-    border-radius: 12px;
+    background: var(--card-bg);
+    border-radius: var(--card-radius);
     overflow: hidden;
     box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
     opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.6s ease forwards;
-    /* Custom property --i ашиглан stagger delay үүсгэнэ */
-    animation-delay: calc(var(--i) * 0.15s);
+    transform: translateY(20px);
+    
+    /* Stagger delay custom property (--i) */
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: calc(var(--i) * 0.2s);
 }
 
-.gallery-item img {
+.gallery-card img {
     width: 100%;
-    height: 200px;
+    height: 220px;
     object-fit: cover;
     display: block;
-    transition: transform var(--transition-speed);
+    transition: transform var(--transition-speed) ease;
 }
 
-.gallery-item:hover img, .gallery-item:focus-within img {
+/* Hover ба Focus-within дээр масштаблах (Scale) */
+.gallery-card:hover img,
+.gallery-card:focus-within img {
     transform: scale(1.1);
 }
 
-.overlay {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.6);
-    color: white;
+.card-caption {
+    padding: 12px;
     text-align: center;
-    transform: translateY(100%);
-    transition: transform var(--transition-speed);
-}
-
-.gallery-item:hover .overlay {
-    transform: translateY(0);
+    font-weight: 600;
 }
 
 @keyframes fadeInUp {
@@ -151,29 +148,25 @@ h2 {
     }
 }
 
-/* ==========================================
-   3. 3D FLIP CARD
-   ========================================== */
+/* ХОЁРДУГААР ДААЛГАВАР: 3D Flip Card */
 .flip-card {
     width: 100%;
-    max-width: 350px;
-    height: 230px;
+    max-width: 380px;
+    height: 250px;
     margin: 0 auto;
-    perspective: 1000px; /* 3D Гүн үүсгэнэ */
+    perspective: 1000px;
 }
 
 .flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    text-align: center;
     transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     transform-style: preserve-3d;
-    cursor: pointer;
 }
 
 .flip-card:hover .flip-card-inner,
-.flip-card.flipped .flip-card-inner {
+.flip-card:focus .flip-card-inner {
     transform: rotateY(180deg);
 }
 
@@ -181,10 +174,11 @@ h2 {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 12px;
-    backface-visibility: hidden; /* Арын талыг нууна */
+    border-radius: var(--card-radius);
+    backface-visibility: hidden;
     overflow: hidden;
     box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
 }
 
 .flip-card-front {
@@ -197,13 +191,14 @@ h2 {
     object-fit: cover;
 }
 
-.card-title {
+.front-title {
     position: absolute;
     bottom: 0;
     width: 100%;
     background: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 8px;
+    padding: 10px;
+    text-align: center;
 }
 
 .flip-card-back {
@@ -212,66 +207,32 @@ h2 {
     transform: rotateY(180deg);
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     padding: 20px;
-    border: 1px solid var(--border-color);
+    gap: 8px;
 }
 
-.btn-flip {
-    margin-top: 15px;
-    padding: 8px 16px;
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-/* ==========================================
-   4. MEDIA (VIDEO & IFRAME)
-   ========================================== */
+/* ТАВДУГААР ДААЛГАВАР: Media Layout */
 .media-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
-.video-container, .iframe-container {
+.media-card {
     background: var(--card-bg);
     padding: 15px;
-    border-radius: 12px;
+    border-radius: var(--card-radius);
     border: 1px solid var(--border-color);
 }
 
-.responsive-iframe {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 ratio */
-    height: 0;
-    overflow: hidden;
-    border-radius: 8px;
+.media-card h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
 }
 
-.responsive-iframe iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: var(--card-bg);
-    border-top: 1px solid var(--border-color);
-    margin-top: 40px;
-}
-
-/* ==========================================
-   5. PREFERS-REDUCED-MOTION (Accessibility)
-   ========================================== */
+/* ГУРАВДУГААР ДААЛГАВАР: prefers-reduced-motion (Accessibility) */
 @media (prefers-reduced-motion: reduce) {
     *, ::before, ::after {
         animation-duration: 0.01ms !important;
@@ -279,9 +240,20 @@ footer {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
-    
-    .gallery-item {
+
+    .gallery-card {
         opacity: 1;
         transform: none;
     }
+
+    .loader {
+        display: none;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    border-top: 1px solid var(--border-color);
 }
