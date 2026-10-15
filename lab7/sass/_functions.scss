@@ -1,0 +1,15 @@
+// sass/_functions.scss
+@use "sass:math";
+@use "sass:color";
+
+@function rem($px) {
+  @return #{math.div($px, 16px)}rem;
+}
+
+@function contrast($hex-color) {
+  @if (color.channel($hex-color, "lightness", $space: hsl) > 50%) {
+    @return #0f172a;
+  } @else {
+    @return #ffffff;
+  }
+}

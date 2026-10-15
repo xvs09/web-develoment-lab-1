@@ -1,0 +1,32 @@
+// sass/_tokens.scss
+$tokens: (
+  colors: (
+    "primary": #0284c7,
+    "primary-hover": #0369a1,
+    "bg": #f8fafc,
+    "text": #1e293b,
+    "card-bg": #ffffff,
+    "dark-bg": #0f172a,
+    "text-muted": #64748b,
+    "border": #e2e8f0,
+    "white": #ffffff
+  ),
+  radius: (
+    "sm": 6px,
+    "md": 12px
+  ),
+  breakpoints: (
+    "tablet": 768px,
+    "desktop": 1024px
+  )
+);
+
+:root {
+  @each $category, $map in $tokens {
+    @if $category != "breakpoints" {
+      @each $key, $value in $map {
+        --#{$key}: #{$value};
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+// sass/_mixins.scss
+@use 'sass:map';
+@use 'tokens';
+
+@mixin respond($breakpoint) {
+  $breakpoints: map.get(tokens.$tokens, breakpoints);
+  $bp-value: map.get($breakpoints, $breakpoint);
+  
+  @if $bp-value {
+    @media (min-width: $bp-value) {
+      @content;
+    }
+  }
+}
+
+@mixin flex-center($direction: row, $justify: space-between, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
