@@ -1,0 +1,4 @@
+@use "sass:math";
+@use "sass:color";
+@function rem($px,$base:16px){@return math.div($px,$base)*1rem}
+@function contrast($bg){$r:math.div(color.channel($bg,"red",$space:rgb),255);$g:math.div(color.channel($bg,"green",$space:rgb),255);$b:math.div(color.channel($bg,"blue",$space:rgb),255);@if ($r*.299+$g*.587+$b*.114)>.5{@return #0f172a}@return #fff}

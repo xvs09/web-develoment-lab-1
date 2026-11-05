@@ -1,0 +1,4 @@
+@use "mixins" as m;@use "functions" as f;@use "tokens" as t;
+.hero{background:linear-gradient(135deg,t.color(primary),#2563eb);color:f.contrast(t.color(primary));text-align:center;padding:f.rem(50px) f.rem(20px);h1{font-size:1.8rem;margin-bottom:f.rem(10px)}p{font-size:1rem;opacity:.9;max-width:600px;margin:0 auto}
+@include m.respond(tablet){padding:f.rem(60px) f.rem(20px);h1{font-size:2.3rem}}
+@include m.respond(desktop){padding:f.rem(80px) f.rem(20px);h1{font-size:2.8rem}}}

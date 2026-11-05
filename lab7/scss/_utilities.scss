@@ -1,0 +1,2 @@
+$spacing:(10:10px,20:20px,30:30px,40:40px);
+@each $key,$value in $spacing{.mt-#{$key}{margin-top:$value}.mb-#{$key}{margin-bottom:$value}}

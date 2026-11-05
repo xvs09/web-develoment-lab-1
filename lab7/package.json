@@ -1,15 +1,13 @@
 {
-  "name": "lab7-website",
+  "name": "lab7-sass-gallery",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "sass": "sass --watch sass/main.scss style.css --style compressed"
+    "dev": "sass --watch scss/style.scss:css/style.css --style=expanded --source-map",
+    "build": "sass scss/style.scss:css/style.css --style=compressed --source-map",
+    "test": "sass --check scss/style.scss"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "devDependencies": {
-    "sass": "^1.x.x"
+    "sass": "^1.93.0"
   }
 }
